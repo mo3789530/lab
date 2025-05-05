@@ -1,4 +1,4 @@
 import { PGlite } from "@electric-sql/pglite";
 
-const db = new PGlite("./db");
+const db = new PGlite("../db");
 

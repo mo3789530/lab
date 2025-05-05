@@ -1,0 +1,21 @@
+{
+  "version": "5",
+  "specifiers": {
+    "npm:@electric-sql/pglite@*": "0.3.0",
+    "npm:pg-protocol@1.6.1": "1.6.1"
+  },
+  "npm": {
+    "@electric-sql/pglite@0.3.0": {
+      "integrity": "sha512-ou1PA24kStSNpQVGdzDg1FGRzO7AQ3O6OX5FryupMdHkSfSswG2ZVXjCzzJKK88KLk+Q4QinKjZIUtmMeec5rg=="
+    },
+    "pg-protocol@1.6.1": {
+      "integrity": "sha512-jPIlvgoD63hrEuihvIg+tJhoGjUsLPn6poJY9N5CnlPd91c2T18T/9zBtLxZSb1EhYxBRoZJtzScCaWlYLtktg=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/assert@1",
+      "npm:pg-protocol@1.6.1"
+    ]
+  }
+}
