@@ -24,7 +24,10 @@
 			"extensions": [
 				"VisualStudioExptTeam.vscodeintellicode",
 				"christian-kohler.path-intellisense",
-				"denoland.vscode-deno"
+				"hbenl.vscode-test-explorer",
+				"streetsidesoftware.code-spell-checker",
+				"rvest.vs-code-prettier-eslint",
+				"task.vscode-task"
 			]
 		}
 	}
