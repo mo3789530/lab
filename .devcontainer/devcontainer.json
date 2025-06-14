@@ -1,0 +1,31 @@
+{
+	"name": "mapper_devcontainer",
+	"image": "mcr.microsoft.com/devcontainers/base:bullseye",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+	"workspaceFolder": "/workspace",
+    "mounts": [],
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {},
+		"ghcr.io/devcontainers/features/git:1": {},
+		"ghcr.io/eitsupi/devcontainer-features/go-task:1": {},
+		"ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {},
+        "ghcr.io/devcontainers-community/features/deno:1": {}
+	},
+	// "forwardPorts": [5432],p
+	// "postCreateCommand": "java -version",
+	// Configure tool-specific properties.
+	"customizations": {
+		"jetbrains": {
+			"backend": "IntelliJ"
+		},
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"VisualStudioExptTeam.vscodeintellicode",
+				"christian-kohler.path-intellisense",
+				"denoland.vscode-deno"
+			]
+		}
+	}
+}
