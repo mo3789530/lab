@@ -2,13 +2,15 @@
 import { DB } from "https://deno.land/x/sqlite/mod.ts";
 
 import { getObject, putObject } from "./storage.ts";
-import { randomUUID } from "node:crypto";
+import { randomUUID, UUID } from "node:crypto";
 
 class Message {
+  Id?: UUID;
   ImageUrl: string;
   Name: string;
   Message: string;
-  constructor(imageUrl: string, name: string, message: string) {
+  constructor(id: UUID | undefined = undefined, imageUrl: string, name: string, message: string) {
+    this.Id = id;
     this.ImageUrl = imageUrl;
     this.Name = name;
     this.Message = message;
@@ -44,9 +46,9 @@ export async function selectMessages(
 
   const query = "SELECT ImageUrl, Name, Message FROM maps LIMIT ? OFFSET ?";
   for (
-    const [imageUrl, name, message] of database.query(query, [limit, offset])
+    const [id, imageUrl, name, message] of database.query(query, [limit, offset])
   ) {
-    messages.push(new Message(String(imageUrl), String(name), String(message)));
+    messages.push(new Message(id as UUID, String(imageUrl), String(name), String(message)));
   }
 
   return messages;
